@@ -29,7 +29,9 @@ local function inv()
         end
     end
 end
-
+local very_funne_rig = Instance.new("Model")
+very_funne_rig.Name = "very funne rig"
+very_funne_rig.Parent = workspace
 
 local function clone()
     for _, v in pairs(ch:GetDescendants()) do
@@ -59,7 +61,7 @@ local function clone()
             rigo.OutlineColor = Color3.fromRGB(0, 0, 0)
             rigo.DepthMode = Enum.HighlightDepthMode.Occluded
 
-            c.Parent = workspace
+            c.Parent = very_funne_rig
             table.insert(childrens, {original = v, clone = c, highlight = rigo})
         end
     end
