@@ -81,6 +81,12 @@ game:GetService("RunService").Heartbeat:Connect(function()
         end
     end
 end)
-
+task.spawn(function()
+local credits = Instance.new("Message")
+credits.Parent = workspace
+credits.Text = "Krystal Dance C.R Edition by catt0q | Original by Hemi | QCat Scripts | catt0q on ScriptBlox"
+task.wait(5)
+credits:Destroy() -- idc u can remove it
+end)
 task.wait(1) -- let the rig load
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Nitro-GT/OxideReanim/refs/heads/main/KrystalDance3"))()
