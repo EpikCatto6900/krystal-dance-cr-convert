@@ -37,14 +37,19 @@ local function clone()
             local c = Instance.new("Part")
             c.Size = v.Size
             c.Material = Enum.Material.SmoothPlastic
-            c.Color = v.Color
             c.Transparency = 0
             c.CanCollide = false
             c.Anchored = true
-            c.Name = v.Name .. "funny_rig"
+            c.Name = v.Name .. "_funnyrig"
             
             if v.Name == "Left Arm" or v.Name == "Right Arm" then
                 c.Color = Color3.fromRGB(255, 255, 255)
+            elseif v.Name == "Torso" then
+                c.Color = Color3.fromRGB(75, 151, 75)
+            elseif v.Name == "Left Leg" or v.Name == "Right Leg" then
+                c.Color = Color3.fromRGB(110, 153, 202)
+            else
+                c.Color = v.Color
             end
 
             local rigo = Instance.new("Highlight")
@@ -59,6 +64,7 @@ local function clone()
         end
     end
 end
+
 
 
 rma()
