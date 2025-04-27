@@ -5,7 +5,7 @@
 -- https://discord.gg/mfM99eM5xy
 local plr = game.Players.LocalPlayer
 local ch = plr.Character or plr.CharacterAdded:Wait()
-
+local delayed = 0
 local childrens = {}
 
 local children = {
@@ -73,20 +73,32 @@ rma()
 inv()
 clone()
 plr.Character.Head.face:Destroy()
-
-game:GetService("RunService").Heartbeat:Connect(function()
+task.spawn(function()
+local credits = Instance.new("Message")
+credits.Parent = workspace
+credits.Text = [[
+Krystal Dance C.R Edition by catt0q
+Original by Hemi
+catt0q on ScriptBlox
+Discord Server:
+https://discord.gg/mfM99eM5xy
+Discord:
+catt0q_kazakhstan
+]]
+task.wait(5)
+credits:Destroy()
+end)
+task.spawn(function()
+while true do
     for _, p in pairs(childrens) do
         if p.original and p.original.Parent then
             p.clone.CFrame = p.original.CFrame
         end
     end
-end)
-task.spawn(function()
-local credits = Instance.new("Message")
-credits.Parent = workspace
-credits.Text = "Krystal Dance C.R Edition by catt0q | Original by Hemi | QCat Scripts | catt0q on ScriptBlox"
-task.wait(5)
-credits:Destroy() -- idc u can remove it
-end)
+    delayed = math.random(1,7) / 100
+    print(delayed)
+    task.wait(delayed)
+    end
+    end)
 task.wait(1) -- let the rig load
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Nitro-GT/OxideReanim/refs/heads/main/KrystalDance3"))()
