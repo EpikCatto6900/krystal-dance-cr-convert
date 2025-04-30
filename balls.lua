@@ -96,7 +96,6 @@ while true do
         end
     end
     delayed = math.random(1,7) / 100
-    print(delayed)
     task.wait(delayed)
     end
     end)
